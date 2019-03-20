@@ -22,7 +22,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::put('/profile/{id}', 'ProfileController@update')->name('profile.update');
     });
 
-    Route::prefix('admin')->name('admin.')->group( function () {
+    Route::middleware('admin')->prefix('admin')->name('admin.')->group( function () {
         /** admin route */
         Route::get('/', 'AdminController@index')->name('index');
 

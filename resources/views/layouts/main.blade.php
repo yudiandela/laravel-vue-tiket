@@ -42,6 +42,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            @admin
             <!-- Heading -->
             <div class="sidebar-heading">
                 {{ __('Admin') }}
@@ -81,6 +82,7 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
+            @endadmin
 
             <!-- Heading -->
             <div class="sidebar-heading">
