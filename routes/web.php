@@ -2,10 +2,17 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 /** Auth route */
 Auth::routes();
+Route::get('/logout', function () {
+    return redirect()->route('login');
+});
+
+Route::fallback(function () {
+    return view('errors.404');
+});
 
 Route::group(['middleware' => ['auth']], function () {
     Route::prefix('user')->name('user.')->group( function () {
